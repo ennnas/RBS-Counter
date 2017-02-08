@@ -1,0 +1,36 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary theme color of the app (sets background color of app bar) -->
+        <item name="colorPrimary">#1f428f</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">#1f428f</item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="textScore">
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">54sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="teamName">
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="resetButton">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">serif-monospace</item>
+    </style>
+</resources>
