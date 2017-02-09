@@ -33,12 +33,29 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    style="@style/teamName"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Team A" />
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/arrow"
+                        android:onClick="changeLogoA"
+                        android:src="@drawable/left"
+                        android:tag="-1" />
+
+                    <ImageView
+                        android:id="@+id/logoTeamA"
+                        style="@style/logoTeam"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/base" />
+
+                    <ImageView
+                        style="@style/arrow"
+                        android:onClick="changeLogoA"
+                        android:src="@drawable/right"
+                        android:tag="1" />
+                </LinearLayout>
 
 
                 <TextView
@@ -90,12 +107,29 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    style="@style/teamName"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Team B" />
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/arrow"
+                        android:onClick="changeLogoB"
+                        android:src="@drawable/left"
+                        android:tag="-1" />
+
+                    <ImageView
+                        android:id="@+id/logoTeamB"
+                        style="@style/logoTeam"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/base" />
+
+                    <ImageView
+                        style="@style/arrow"
+                        android:onClick="changeLogoB"
+                        android:src="@drawable/right"
+                        android:tag="1" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/team_b_score"

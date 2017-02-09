@@ -33,4 +33,17 @@
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:fontFamily">serif-monospace</item>
     </style>
+
+    <style name="logoTeam">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">5</item>
+    </style>
+
+    <style name="arrow">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
 </resources>
