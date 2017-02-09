@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.lang.Math;
 
 import static android.R.attr.id;
+import static android.R.attr.logo;
 import static android.os.Build.VERSION_CODES.M;
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("TeamA",scoreTeamA);
         savedInstanceState.putInt("TeamB",scoreTeamB);
+        savedInstanceState.putInt("logoA",logoA);
+        savedInstanceState.putInt("logoB",logoB);
     }
 
     @Override
@@ -41,8 +44,14 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         scoreTeamA = savedInstanceState.getInt("TeamA");
         scoreTeamB = savedInstanceState.getInt("TeamB");
+        logoA = savedInstanceState.getInt("logoA");
+        logoB = savedInstanceState.getInt("logoB");
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
+        int idA = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoA], null, null);
+        int idB = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoB], null, null);
+        displayLogoA(idA);
+        displayLogoB(idB);
     }
 
     private void displayForTeamA(int score){
@@ -80,18 +89,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeLogoA(View view){
         logoA = Math.abs(logoA + Integer.parseInt(view.getTag().toString()))%6;
-        int id = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoA], null, null);
-        System.out.print(id);
-        ImageView imageview = (ImageView) findViewById(R.id.logoTeamA);
-        imageview.setImageResource(id);
+        int idA = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoA], null, null);
+        displayLogoA(idA);
     }
 
     public void changeLogoB(View view){
         logoB = Math.abs(logoB + Integer.parseInt(view.getTag().toString()))%6;
-        int id = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoB], null, null);
-        System.out.print(id);
+        int idB = getResources().getIdentifier("com.example.android.courtcounter:drawable/" + nations[logoB], null, null);
+        displayLogoB(idB);
+    }
+
+    public void displayLogoA(int idA){
+        ImageView imageview = (ImageView) findViewById(R.id.logoTeamA);
+        imageview.setImageResource(idA);
+    }
+
+    public void displayLogoB(int idB){
         ImageView imageview = (ImageView) findViewById(R.id.logoTeamB);
-        imageview.setImageResource(id);
+        imageview.setImageResource(idB);
     }
 
 }
